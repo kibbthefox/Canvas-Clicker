@@ -1,10 +1,88 @@
-[gd_scene load_steps=2 format=3 uid="uid://bodxbudtgy0si"]
+[gd_scene load_steps=8 format=3 uid="uid://bodxbudtgy0si"]
 
 [ext_resource type="Texture2D" uid="uid://bkq1vqn5kh66r" path="res://Assets/white.png" id="1_gyk0w"]
+[ext_resource type="Script" uid="uid://buuvwgx1ooddg" path="res://scene.gd" id="1_w7k6m"]
+[ext_resource type="Texture2D" uid="uid://0v884ili4vw1" path="res://Assets/black.png" id="2_sqexo"]
+[ext_resource type="FontFile" uid="uid://b8dotbnqn8wdl" path="res://Assets/Inter-4.1/Inter-Medium.ttf" id="3_w7k6m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cdrqv"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7k6m"]
+size = Vector2(265, 89)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdrqv"]
+size = Vector2(164, 90)
 
 [node name="clicker" type="Node2D"]
+script = ExtResource("1_w7k6m")
 
-[node name="White" type="Sprite2D" parent="."]
-position = Vector2(1152, 649)
-scale = Vector2(4.07067, 4.24183)
+[node name="bg" type="Node" parent="."]
+
+[node name="White" type="Sprite2D" parent="bg"]
+position = Vector2(576, 324)
+scale = Vector2(2.03533, 2.11765)
 texture = ExtResource("1_gyk0w")
+
+[node name="Black" type="Sprite2D" parent="bg"]
+position = Vector2(157, -53)
+scale = Vector2(436.5, 4.75)
+texture = ExtResource("2_sqexo")
+
+[node name="Black2" type="Sprite2D" parent="bg"]
+position = Vector2(576, 324)
+scale = Vector2(3, 324)
+texture = ExtResource("2_sqexo")
+
+[node name="upgrades" type="RichTextLabel" parent="bg"]
+anchors_preset = -1
+anchor_top = 0.0154321
+anchor_right = -0.221354
+anchor_bottom = -0.123457
+offset_left = 628.0
+offset_top = 14.0
+offset_right = 1148.0
+offset_bottom = 194.0
+theme_override_fonts/normal_font = ExtResource("3_w7k6m")
+theme_override_font_sizes/normal_font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_cdrqv")
+text = "upgrades"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="upgradesarea" type="Area2D" parent="bg/upgrades"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bg/upgrades/upgradesarea"]
+position = Vector2(132, 44)
+shape = SubResource("RectangleShape2D_w7k6m")
+
+[node name="skins" type="RichTextLabel" parent="bg"]
+anchors_preset = -1
+anchor_left = -0.221354
+anchor_top = -0.108025
+anchor_right = -0.309028
+anchor_bottom = -0.123457
+offset_left = 1188.0
+offset_top = 95.0
+offset_right = 1453.0
+offset_bottom = 195.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_w7k6m")
+theme_override_font_sizes/normal_font_size = 48
+text = "skins
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="skinsarea" type="Area2D" parent="bg/skins"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bg/skins/skinsarea"]
+position = Vector2(82, 45)
+shape = SubResource("RectangleShape2D_cdrqv")
+
+[node name="Black3" type="Sprite2D" parent="bg"]
+position = Vector2(352, -149)
+scale = Vector2(9.5, 4.5)
+texture = ExtResource("2_sqexo")
