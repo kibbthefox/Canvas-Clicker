@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bodxbudtgy0si"]
+
+[ext_resource type="Texture2D" uid="uid://bkq1vqn5kh66r" path="res://Assets/white.png" id="1_gyk0w"]
+
+[node name="clicker" type="Node2D"]
+
+[node name="White" type="Sprite2D" parent="."]
+position = Vector2(1152, 649)
+scale = Vector2(4.07067, 4.24183)
+texture = ExtResource("1_gyk0w")
