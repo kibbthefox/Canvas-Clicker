@@ -3,86 +3,137 @@
 [ext_resource type="Texture2D" uid="uid://bkq1vqn5kh66r" path="res://Assets/white.png" id="1_gyk0w"]
 [ext_resource type="Script" uid="uid://buuvwgx1ooddg" path="res://scene.gd" id="1_w7k6m"]
 [ext_resource type="Texture2D" uid="uid://0v884ili4vw1" path="res://Assets/black.png" id="2_sqexo"]
-[ext_resource type="FontFile" uid="uid://b8dotbnqn8wdl" path="res://Assets/Inter-4.1/Inter-Medium.ttf" id="3_w7k6m"]
+[ext_resource type="FontFile" uid="uid://drk68am4ktvoj" path="res://Assets/Inter-4.1/Inter-Regular.ttf" id="4_w7k6m"]
+[ext_resource type="Texture2D" uid="uid://c6u71djeskvjx" path="res://Assets/logo.png" id="5_cdrqv"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cdrqv"]
-bg_color = Color(0, 0, 0, 1)
+[sub_resource type="SpriteFrames" id="SpriteFrames_bgoqi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_cdrqv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7k6m"]
-size = Vector2(265, 89)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdrqv"]
-size = Vector2(164, 90)
+[sub_resource type="CircleShape2D" id="CircleShape2D_0jrim"]
+radius = 533.907
 
 [node name="clicker" type="Node2D"]
 script = ExtResource("1_w7k6m")
 
-[node name="bg" type="Node" parent="."]
+[node name="bg" type="Node2D" parent="."]
 
-[node name="White" type="Sprite2D" parent="bg"]
+[node name="bg" type="Sprite2D" parent="bg"]
 position = Vector2(576, 324)
 scale = Vector2(2.03533, 2.11765)
 texture = ExtResource("1_gyk0w")
 
-[node name="Black" type="Sprite2D" parent="bg"]
-position = Vector2(157, -53)
-scale = Vector2(436.5, 4.75)
-texture = ExtResource("2_sqexo")
-
-[node name="Black2" type="Sprite2D" parent="bg"]
+[node name="divider" type="Sprite2D" parent="bg"]
 position = Vector2(576, 324)
 scale = Vector2(3, 324)
 texture = ExtResource("2_sqexo")
 
-[node name="upgrades" type="RichTextLabel" parent="bg"]
-anchors_preset = -1
-anchor_top = 0.0154321
-anchor_right = -0.221354
-anchor_bottom = -0.123457
-offset_left = 628.0
-offset_top = 14.0
-offset_right = 1148.0
-offset_bottom = 194.0
-theme_override_fonts/normal_font = ExtResource("3_w7k6m")
-theme_override_font_sizes/normal_font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxFlat_cdrqv")
-text = "upgrades"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="upgradesarea" type="Area2D" parent="bg/upgrades"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bg/upgrades/upgradesarea"]
-position = Vector2(132, 44)
-shape = SubResource("RectangleShape2D_w7k6m")
-
-[node name="skins" type="RichTextLabel" parent="bg"]
-anchors_preset = -1
-anchor_left = -0.221354
-anchor_top = -0.108025
-anchor_right = -0.309028
-anchor_bottom = -0.123457
-offset_left = 1188.0
-offset_top = 95.0
-offset_right = 1453.0
-offset_bottom = 195.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_w7k6m")
-theme_override_font_sizes/normal_font_size = 48
-text = "skins
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="skinsarea" type="Area2D" parent="bg/skins"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bg/skins/skinsarea"]
-position = Vector2(82, 45)
-shape = SubResource("RectangleShape2D_cdrqv")
-
-[node name="Black3" type="Sprite2D" parent="bg"]
-position = Vector2(352, -149)
-scale = Vector2(9.5, 4.5)
+[node name="upgradesbg" type="Sprite2D" parent="."]
+position = Vector2(768, 76)
+scale = Vector2(132, 44)
 texture = ExtResource("2_sqexo")
+
+[node name="upgrades" type="Button" parent="."]
+offset_left = 636.0
+offset_top = 32.0
+offset_right = 900.0
+offset_bottom = 120.0
+focus_mode = 0
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_w7k6m")
+theme_override_font_sizes/font_size = 48
+text = "upgrades"
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="skinsbg" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1014, 76)
+scale = Vector2(82, 44)
+texture = ExtResource("2_sqexo")
+
+[node name="skins" type="Button" parent="."]
+offset_left = 932.0
+offset_top = 32.0
+offset_right = 1096.0
+offset_bottom = 120.0
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_w7k6m")
+theme_override_font_sizes/font_size = 48
+text = "skins"
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="clicker" type="AnimatedSprite2D" parent="."]
+position = Vector2(288, 306)
+scale = Vector2(0.301833, 0.31404)
+sprite_frames = SubResource("SpriteFrames_bgoqi")
+
+[node name="Area2D" type="Area2D" parent="clicker"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="clicker/Area2D"]
+shape = SubResource("CircleShape2D_0jrim")
+
+[node name="upgrade1" type="Node2D" parent="."]
+
+[node name="top" type="Sprite2D" parent="upgrade1"]
+position = Vector2(866, 152)
+scale = Vector2(255, 2)
+texture = ExtResource("2_sqexo")
+
+[node name="bottom" type="Sprite2D" parent="upgrade1"]
+position = Vector2(866, 264)
+scale = Vector2(255, 2)
+texture = ExtResource("2_sqexo")
+
+[node name="right" type="Sprite2D" parent="upgrade1"]
+position = Vector2(1119, 208)
+scale = Vector2(2.00002, 58)
+texture = ExtResource("2_sqexo")
+
+[node name="left" type="Sprite2D" parent="upgrade1"]
+position = Vector2(613, 208)
+scale = Vector2(1.99999, 58)
+texture = ExtResource("2_sqexo")
+
+[node name="bartop" type="Sprite2D" parent="upgrade1"]
+position = Vector2(866, 218)
+scale = Vector2(239, 2)
+texture = ExtResource("2_sqexo")
+
+[node name="barbottom" type="Sprite2D" parent="upgrade1"]
+position = Vector2(866, 232)
+scale = Vector2(239, 1.99999)
+texture = ExtResource("2_sqexo")
+
+[node name="barleft" type="Sprite2D" parent="upgrade1"]
+position = Vector2(629, 225)
+scale = Vector2(2.00002, 9)
+texture = ExtResource("2_sqexo")
+
+[node name="barright" type="Sprite2D" parent="upgrade1"]
+position = Vector2(1103, 225)
+scale = Vector2(2.00002, 9)
+texture = ExtResource("2_sqexo")
+
+[connection signal="pressed" from="upgrades" to="." method="_on_upgrades_pressed"]
+[connection signal="pressed" from="skins" to="." method="_on_skins_pressed"]
