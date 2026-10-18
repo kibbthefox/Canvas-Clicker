@@ -27,13 +27,13 @@ Uncompress the .zip and open the file. If a windows security window shows up, cl
 
 ## Screenshots
 
-<img src="README assets/ss1.png" alt="ss1" width="650" style="margin-bottom: 20px;">
+<img src="README Assets/ss1.png" alt="ss1" width="650" style="margin-bottom: 20px;">
 
-<img src="README assets/ss2.png" alt="ss2" width="650" style="margin-bottom: 20px;">
+<img src="README Assets/ss2.png" alt="ss2" width="650" style="margin-bottom: 20px;">
 
-<img src="README assets/ss3.png" alt="ss3" width="650" style="margin-bottom: 20px;">
+<img src="README Assets/ss3.png" alt="ss3" width="650" style="margin-bottom: 20px;">
 
-<img src="README assets/ss4.png" alt="ss4" width="650">
+<img src="README Assets/ss4.png" alt="ss4" width="650">
 
 
 ## AI Disclosure
