@@ -185,13 +185,13 @@ scale = Vector2(0.25265, 0.133987)
 texture = ExtResource("1_gyk0w")
 
 [node name="white8-2" type="Sprite2D" parent="bg"]
-position = Vector2(735, 603)
-scale = Vector2(0.427562, 0.133987)
+position = Vector2(729.5, 603)
+scale = Vector2(0.408127, 0.133987)
 texture = ExtResource("1_gyk0w")
 
 [node name="white9-2" type="Sprite2D" parent="bg"]
-position = Vector2(998, 602)
-scale = Vector2(0.427562, 0.133987)
+position = Vector2(1003, 602)
+scale = Vector2(0.409894, 0.133987)
 texture = ExtResource("1_gyk0w")
 
 [node name="divider" type="Sprite2D" parent="bg"]

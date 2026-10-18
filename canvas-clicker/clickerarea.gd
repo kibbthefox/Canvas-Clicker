@@ -19,6 +19,8 @@ func _process(_delta: float) -> void:
 			Gl.unroundedpoints += Gl.clicks * Gl.multiplier
 			Gl.unroundedallpoints += Gl.clicks * Gl.multiplier
 			get_parent().rotation -= PI / 300
+			if $"..".scale.y > 0.23:
+				$"..".scale.y -= 0.02
 
 
 func _physics_process(_delta: float) -> void:
@@ -27,3 +29,5 @@ func _physics_process(_delta: float) -> void:
 		Gl.unroundedpoints += Gl.cps * Gl.multiplier
 		Gl.unroundedallpoints += Gl.cps * Gl.multiplier
 		time = 1
+	if $"..".scale.y < 0.314:
+		$"..".scale.y += 0.003
