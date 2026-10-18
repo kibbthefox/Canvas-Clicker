@@ -11,7 +11,7 @@ Click the logo to get points to spend on upgrades! You can upgrade the amount of
 ## Opening Instructions
 
 ### Versions Tested
-MacOS has been tested multiple times. Windows has been tested once.
+MacOS has been tested multiple times. Windows has been tested once. **Linux has NOT been tested**
 | OS      | Version        | Processor                                     |
 | ------- | -------------- | --------------------------------------------- |
 | MacOS   | Ventura 13.7.8 | 2.9 GHz Quad-Core Intel Core i7.              |
@@ -24,6 +24,9 @@ To open, uncompress the zip, and right click on the file. Select "Open" and then
 
 ### Windows
 Uncompress the .zip and open the file. If a windows security window shows up, click "more info" and then click "Run Anyway"
+
+### Linux
+You have to figure this out yourself, I don't know anything about linux </3
 
 ## Screenshots
 
