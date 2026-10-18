@@ -1,16 +1,33 @@
-[gd_scene load_steps=8 format=3 uid="uid://bodxbudtgy0si"]
+[gd_scene load_steps=26 format=3 uid="uid://bodxbudtgy0si"]
 
 [ext_resource type="Texture2D" uid="uid://bkq1vqn5kh66r" path="res://Assets/white.png" id="1_gyk0w"]
 [ext_resource type="Script" uid="uid://buuvwgx1ooddg" path="res://scene.gd" id="1_w7k6m"]
+[ext_resource type="Texture2D" uid="uid://c4k04pn1i6ujv" path="res://Assets/canvas.png" id="2_qyel7"]
 [ext_resource type="Texture2D" uid="uid://0v884ili4vw1" path="res://Assets/black.png" id="2_sqexo"]
 [ext_resource type="FontFile" uid="uid://drk68am4ktvoj" path="res://Assets/Inter-4.1/Inter-Regular.ttf" id="4_w7k6m"]
 [ext_resource type="Texture2D" uid="uid://c6u71djeskvjx" path="res://Assets/logo.png" id="5_cdrqv"]
+[ext_resource type="Script" uid="uid://b0l1yuy6in35w" path="res://clicker.gd" id="6_0eff6"]
+[ext_resource type="FontFile" uid="uid://cu0sr6q84ddr4" path="res://Assets/Inter-4.1/Inter-SemiBold.ttf" id="6_0jrim"]
+[ext_resource type="Texture2D" uid="uid://ribb6mx1ftlq" path="res://Assets/progressbar.png" id="7_0eff6"]
+[ext_resource type="Texture2D" uid="uid://6xmbn4qyxdc1" path="res://Assets/blahaj1000x1000.png" id="7_7gc16"]
+[ext_resource type="Texture2D" uid="uid://di76n04opc6x3" path="res://Assets/blahaj.png" id="7_blx35"]
+[ext_resource type="Script" uid="uid://c1kioyxyn5ycd" path="res://clickerarea.gd" id="7_jk4pt"]
+[ext_resource type="FontFile" uid="uid://cmocspyqq3ys5" path="res://Assets/Inter-4.1/Inter-Bold.ttf" id="10_5rm6q"]
+[ext_resource type="Script" uid="uid://q474cik2ocfw" path="res://progressbar.gd" id="10_ofhd2"]
+[ext_resource type="Script" uid="uid://dhxvqxcbp4ibl" path="res://buy.gd" id="11_n2nxk"]
+[ext_resource type="StyleBox" uid="uid://decuqf6uwjo6j" path="res://Assets/clicker.tres" id="11_nwiku"]
+[ext_resource type="StyleBox" uid="uid://mecckr28cri2" path="res://Assets/off.tres" id="11_ofhd2"]
+[ext_resource type="Script" uid="uid://c6hfwbtw2gd3f" path="res://skinbuttons.gd" id="13_blx35"]
+[ext_resource type="Texture2D" uid="uid://5rlv3ojq78ms" path="res://Assets/trans.png" id="15_b8s23"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bgoqi"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("5_cdrqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7gc16")
 }],
 "loop": true,
 "name": &"default",
@@ -20,19 +37,98 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_0jrim"]
 radius = 533.907
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4icnp"]
+bg_color = Color(1, 0.72549, 1, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_myegl"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b8s23"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gc16"]
+bg_color = Color(1, 0.796078, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
 [node name="clicker" type="Node2D"]
 script = ExtResource("1_w7k6m")
 
 [node name="bg" type="Node2D" parent="."]
 
+[node name="Canvas" type="Sprite2D" parent="bg"]
+position = Vector2(575, 327)
+scale = Vector2(0.577556, 0.577556)
+texture = ExtResource("2_qyel7")
+
 [node name="bg" type="Sprite2D" parent="bg"]
+modulate = Color(1, 1, 1, 0.854902)
 position = Vector2(576, 324)
 scale = Vector2(2.03533, 2.11765)
 texture = ExtResource("1_gyk0w")
 
+[node name="bg2" type="Sprite2D" parent="bg"]
+modulate = Color(1, 0.839047, 0.999176, 1)
+position = Vector2(576, 324)
+scale = Vector2(2.03533, 2.11765)
+texture = ExtResource("1_gyk0w")
+
+[node name="white1-2" type="Sprite2D" parent="bg"]
+position = Vector2(866, 222)
+scale = Vector2(0.893993, 0.366013)
+texture = ExtResource("1_gyk0w")
+
+[node name="white2-2" type="Sprite2D" parent="bg"]
+position = Vector2(866, 376)
+scale = Vector2(0.893993, 0.366013)
+texture = ExtResource("1_gyk0w")
+
+[node name="white3-2" type="Sprite2D" parent="bg"]
+position = Vector2(866, 530)
+scale = Vector2(0.893993, 0.366013)
+texture = ExtResource("1_gyk0w")
+
+[node name="white4-2" type="Sprite2D" parent="bg"]
+position = Vector2(497, 602)
+scale = Vector2(0.190813, 0.137255)
+texture = ExtResource("1_gyk0w")
+
+[node name="white5-2" type="Sprite2D" parent="bg"]
+position = Vector2(369, 602)
+scale = Vector2(0.190813, 0.137255)
+texture = ExtResource("1_gyk0w")
+
+[node name="white6-2" type="Sprite2D" parent="bg"]
+position = Vector2(241.5, 602.5)
+scale = Vector2(0.189046, 0.133987)
+texture = ExtResource("1_gyk0w")
+
+[node name="white7-2" type="Sprite2D" parent="bg"]
+position = Vector2(95.5, 602.5)
+scale = Vector2(0.25265, 0.133987)
+texture = ExtResource("1_gyk0w")
+
 [node name="divider" type="Sprite2D" parent="bg"]
 position = Vector2(576, 324)
-scale = Vector2(3, 324)
+scale = Vector2(2, 324)
 texture = ExtResource("2_sqexo")
 
 [node name="upgradesbg" type="Sprite2D" parent="."]
@@ -46,6 +142,7 @@ offset_top = 32.0
 offset_right = 900.0
 offset_bottom = 120.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -70,6 +167,7 @@ offset_top = 32.0
 offset_right = 1096.0
 offset_bottom = 120.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -87,53 +185,705 @@ expand_icon = true
 position = Vector2(288, 306)
 scale = Vector2(0.301833, 0.31404)
 sprite_frames = SubResource("SpriteFrames_bgoqi")
+script = ExtResource("6_0eff6")
 
 [node name="Area2D" type="Area2D" parent="clicker"]
+script = ExtResource("7_jk4pt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="clicker/Area2D"]
 shape = SubResource("CircleShape2D_0jrim")
 
+[node name="clicks" type="RichTextLabel" parent="."]
+offset_left = 185.0
+offset_top = 580.0
+offset_right = 297.0
+offset_bottom = 625.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_0jrim")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4icnp")
+text = "  clicks   1"
+vertical_alignment = 1
+
+[node name="points" type="RichTextLabel" parent="."]
+offset_left = 22.0
+offset_top = 580.0
+offset_right = 169.0
+offset_bottom = 625.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_0jrim")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4icnp")
+text = "  points   0"
+vertical_alignment = 1
+
+[node name="cps" type="RichTextLabel" parent="."]
+offset_left = 313.0
+offset_top = 580.0
+offset_right = 425.0
+offset_bottom = 625.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_0jrim")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4icnp")
+text = "  cps       0"
+vertical_alignment = 1
+
+[node name="mult" type="RichTextLabel" parent="."]
+offset_left = 441.0
+offset_top = 580.0
+offset_right = 553.0
+offset_bottom = 625.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_0jrim")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4icnp")
+text = "  mult   x1.00"
+vertical_alignment = 1
+
+[node name="skins2" type="Node2D" parent="."]
+visible = false
+position = Vector2(441, 580)
+
+[node name="box1" type="RichTextLabel" parent="skins2"]
+offset_left = 170.0
+offset_top = -416.0
+offset_right = 406.0
+offset_bottom = -218.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_0jrim")
+theme_override_styles/normal = SubResource("StyleBoxFlat_myegl")
+vertical_alignment = 1
+
+[node name="title1" type="RichTextLabel" parent="skins2"]
+offset_left = 187.0
+offset_top = -308.0
+offset_right = 328.0
+offset_bottom = -282.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("10_5rm6q")
+theme_override_font_sizes/normal_font_size = 14
+text = "canvas theme"
+vertical_alignment = 1
+
+[node name="desc1" type="RichTextLabel" parent="skins2"]
+offset_left = 187.0
+offset_top = -286.0
+offset_right = 365.0
+offset_bottom = -260.0
+theme_override_colors/default_color = Color(0.244776, 0.244776, 0.244776, 1)
+theme_override_fonts/normal_font = ExtResource("4_w7k6m")
+theme_override_font_sizes/normal_font_size = 12
+text = "the ysws this was made for"
+vertical_alignment = 1
+
+[node name="price1" type="RichTextLabel" parent="skins2"]
+offset_left = 187.0
+offset_top = -257.0
+offset_right = 328.0
+offset_bottom = -231.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("10_5rm6q")
+theme_override_font_sizes/normal_font_size = 12
+text = "owned"
+vertical_alignment = 1
+
+[node name="box1upper" type="RichTextLabel" parent="skins2"]
+offset_left = 170.0
+offset_top = -416.0
+offset_right = 406.0
+offset_bottom = -315.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_0jrim")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4icnp")
+vertical_alignment = 1
+
+[node name="logo" type="Sprite2D" parent="skins2/box1upper"]
+position = Vector2(118, 53)
+scale = Vector2(0.15425, 0.15425)
+texture = ExtResource("5_cdrqv")
+
+[node name="shadow1" type="Sprite2D" parent="skins2"]
+position = Vector2(360, -228)
+scale = Vector2(38, 2)
+texture = ExtResource("2_sqexo")
+
+[node name="buy1" type="Button" parent="skins2"]
+offset_left = 323.0
+offset_top = -263.0
+offset_right = 397.0
+offset_bottom = -230.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("10_5rm6q")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = ExtResource("11_nwiku")
+theme_override_styles/disabled = ExtResource("11_nwiku")
+theme_override_styles/hover_pressed = ExtResource("11_nwiku")
+theme_override_styles/hover = ExtResource("11_nwiku")
+theme_override_styles/pressed = ExtResource("11_nwiku")
+theme_override_styles/normal = ExtResource("11_nwiku")
+text = "USE"
+script = ExtResource("13_blx35")
+
+[node name="box2" type="RichTextLabel" parent="skins2"]
+offset_left = 444.0
+offset_top = -416.0
+offset_right = 680.0
+offset_bottom = -218.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_0jrim")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b8s23")
+vertical_alignment = 1
+
+[node name="title2" type="RichTextLabel" parent="skins2"]
+offset_left = 461.0
+offset_top = -308.0
+offset_right = 602.0
+offset_bottom = -282.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("10_5rm6q")
+theme_override_font_sizes/normal_font_size = 14
+text = "blahaj theme"
+vertical_alignment = 1
+
+[node name="desc2" type="RichTextLabel" parent="skins2"]
+offset_left = 461.0
+offset_top = -286.0
+offset_right = 639.0
+offset_bottom = -260.0
+theme_override_colors/default_color = Color(0.244776, 0.244776, 0.244776, 1)
+theme_override_fonts/normal_font = ExtResource("4_w7k6m")
+theme_override_font_sizes/normal_font_size = 12
+text = "cuddly and cozy :3"
+vertical_alignment = 1
+
+[node name="price2" type="RichTextLabel" parent="skins2"]
+offset_left = 461.0
+offset_top = -257.0
+offset_right = 602.0
+offset_bottom = -231.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("10_5rm6q")
+theme_override_font_sizes/normal_font_size = 12
+text = "300 points"
+vertical_alignment = 1
+
+[node name="box2upper" type="RichTextLabel" parent="skins2"]
+offset_left = 444.0
+offset_top = -416.0
+offset_right = 680.0
+offset_bottom = -315.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_0jrim")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7gc16")
+vertical_alignment = 1
+
+[node name="blahaj" type="Sprite2D" parent="skins2/box2upper"]
+position = Vector2(114, 50)
+scale = Vector2(0.103233, 0.103233)
+texture = ExtResource("7_blx35")
+
+[node name="shadow2" type="Sprite2D" parent="skins2"]
+position = Vector2(634, -228)
+scale = Vector2(38, 2)
+texture = ExtResource("2_sqexo")
+
+[node name="buy2" type="Button" parent="skins2"]
+offset_left = 597.0
+offset_top = -263.0
+offset_right = 671.0
+offset_bottom = -230.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("10_5rm6q")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = ExtResource("11_nwiku")
+theme_override_styles/disabled = ExtResource("11_nwiku")
+theme_override_styles/hover_pressed = ExtResource("11_nwiku")
+theme_override_styles/hover = ExtResource("11_nwiku")
+theme_override_styles/pressed = ExtResource("11_nwiku")
+theme_override_styles/normal = ExtResource("11_ofhd2")
+text = "BUY"
+script = ExtResource("13_blx35")
+
+[node name="modeshadow" type="Sprite2D" parent="skins2"]
+visible = false
+position = Vector2(646.5, -270)
+scale = Vector2(25.4999, 2)
+texture = ExtResource("2_sqexo")
+
+[node name="mode" type="Button" parent="skins2"]
+visible = false
+offset_left = 622.0
+offset_top = -305.0
+offset_right = 671.0
+offset_bottom = -272.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("10_5rm6q")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = ExtResource("11_ofhd2")
+theme_override_styles/disabled = ExtResource("11_ofhd2")
+theme_override_styles/hover_pressed = ExtResource("11_ofhd2")
+theme_override_styles/hover = ExtResource("11_ofhd2")
+theme_override_styles/pressed = ExtResource("11_ofhd2")
+theme_override_styles/normal = ExtResource("11_ofhd2")
+icon = ExtResource("15_b8s23")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("13_blx35")
+
+[node name="box3" type="RichTextLabel" parent="skins2"]
+offset_left = 169.0
+offset_top = -190.0
+offset_right = 405.0
+offset_bottom = 8.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_0jrim")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4icnp")
+vertical_alignment = 1
+
+[node name="box4" type="RichTextLabel" parent="skins2"]
+offset_left = 444.0
+offset_top = -190.0
+offset_right = 680.0
+offset_bottom = 8.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_0jrim")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4icnp")
+vertical_alignment = 1
+
+[node name="box7" type="RichTextLabel" parent="skins2"]
+offset_left = 169.0
+offset_top = -190.0
+offset_right = 405.0
+offset_bottom = -89.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_0jrim")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4icnp")
+vertical_alignment = 1
+
+[node name="box8" type="RichTextLabel" parent="skins2"]
+offset_left = 444.0
+offset_top = -190.0
+offset_right = 680.0
+offset_bottom = -89.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_0jrim")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4icnp")
+vertical_alignment = 1
+
 [node name="upgrade1" type="Node2D" parent="."]
 
 [node name="top" type="Sprite2D" parent="upgrade1"]
-position = Vector2(866, 152)
+position = Vector2(866, 166)
 scale = Vector2(255, 2)
 texture = ExtResource("2_sqexo")
 
 [node name="bottom" type="Sprite2D" parent="upgrade1"]
-position = Vector2(866, 264)
+position = Vector2(866, 278)
 scale = Vector2(255, 2)
 texture = ExtResource("2_sqexo")
 
 [node name="right" type="Sprite2D" parent="upgrade1"]
-position = Vector2(1119, 208)
+position = Vector2(1119, 222)
 scale = Vector2(2.00002, 58)
 texture = ExtResource("2_sqexo")
 
 [node name="left" type="Sprite2D" parent="upgrade1"]
-position = Vector2(613, 208)
+position = Vector2(613, 222)
 scale = Vector2(1.99999, 58)
 texture = ExtResource("2_sqexo")
 
+[node name="progressbar1" type="Sprite2D" parent="upgrade1"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(630, 235)
+scale = Vector2(1, 1.71429)
+texture = ExtResource("7_0eff6")
+script = ExtResource("10_ofhd2")
+
 [node name="bartop" type="Sprite2D" parent="upgrade1"]
-position = Vector2(866, 218)
+position = Vector2(866, 228)
 scale = Vector2(239, 2)
 texture = ExtResource("2_sqexo")
 
 [node name="barbottom" type="Sprite2D" parent="upgrade1"]
-position = Vector2(866, 232)
+position = Vector2(866, 242)
 scale = Vector2(239, 1.99999)
 texture = ExtResource("2_sqexo")
 
 [node name="barleft" type="Sprite2D" parent="upgrade1"]
-position = Vector2(629, 225)
+position = Vector2(629, 235)
 scale = Vector2(2.00002, 9)
 texture = ExtResource("2_sqexo")
 
 [node name="barright" type="Sprite2D" parent="upgrade1"]
-position = Vector2(1103, 225)
+position = Vector2(1103, 235)
 scale = Vector2(2.00002, 9)
 texture = ExtResource("2_sqexo")
 
+[node name="title" type="RichTextLabel" parent="upgrade1"]
+offset_left = 627.0
+offset_top = 177.0
+offset_right = 956.0
+offset_bottom = 203.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("10_5rm6q")
+theme_override_font_sizes/normal_font_size = 18
+text = "upgrade mouse click"
+vertical_alignment = 1
+
+[node name="desc" type="RichTextLabel" parent="upgrade1"]
+offset_left = 627.0
+offset_top = 200.0
+offset_right = 956.0
+offset_bottom = 226.0
+theme_override_colors/default_color = Color(0.244776, 0.244776, 0.244776, 1)
+theme_override_fonts/normal_font = ExtResource("4_w7k6m")
+theme_override_font_sizes/normal_font_size = 12
+text = "  +1 click"
+vertical_alignment = 1
+
+[node name="progress" type="RichTextLabel" parent="upgrade1"]
+offset_left = 627.0
+offset_top = 244.0
+offset_right = 956.0
+offset_bottom = 267.0
+theme_override_colors/default_color = Color(0.244776, 0.244776, 0.244776, 1)
+theme_override_fonts/normal_font = ExtResource("4_w7k6m")
+theme_override_font_sizes/normal_font_size = 10
+text = "   0 / 50 until next purchase is available"
+vertical_alignment = 1
+
+[node name="lvl" type="RichTextLabel" parent="upgrade1"]
+offset_left = 1038.0
+offset_top = 253.0
+offset_right = 1117.0
+offset_bottom = 276.0
+theme_override_colors/default_color = Color(0.244776, 0.244776, 0.244776, 1)
+theme_override_fonts/normal_font = ExtResource("4_w7k6m")
+theme_override_font_sizes/normal_font_size = 10
+text = "lvl 0    "
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="buttonshadow" type="Sprite2D" parent="upgrade1"]
+position = Vector2(1044.5, 217)
+scale = Vector2(53.5, 2)
+texture = ExtResource("2_sqexo")
+
+[node name="buy" type="Button" parent="upgrade1"]
+offset_left = 992.0
+offset_top = 176.0
+offset_right = 1097.0
+offset_bottom = 215.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("10_5rm6q")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = ExtResource("11_nwiku")
+theme_override_styles/disabled = ExtResource("11_nwiku")
+theme_override_styles/hover_pressed = ExtResource("11_nwiku")
+theme_override_styles/hover = ExtResource("11_nwiku")
+theme_override_styles/pressed = ExtResource("11_nwiku")
+theme_override_styles/normal = ExtResource("11_ofhd2")
+text = "BUY"
+script = ExtResource("11_n2nxk")
+
+[node name="upgrade2" type="Node2D" parent="."]
+position = Vector2(0, 140)
+
+[node name="top" type="Sprite2D" parent="upgrade2"]
+position = Vector2(866, 180)
+scale = Vector2(255, 2)
+texture = ExtResource("2_sqexo")
+
+[node name="bottom" type="Sprite2D" parent="upgrade2"]
+position = Vector2(866, 292)
+scale = Vector2(255, 2)
+texture = ExtResource("2_sqexo")
+
+[node name="right" type="Sprite2D" parent="upgrade2"]
+position = Vector2(1119, 236)
+scale = Vector2(2.00002, 58)
+texture = ExtResource("2_sqexo")
+
+[node name="left" type="Sprite2D" parent="upgrade2"]
+position = Vector2(613, 236)
+scale = Vector2(1.99999, 58)
+texture = ExtResource("2_sqexo")
+
+[node name="progressbar2" type="Sprite2D" parent="upgrade2"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(630, 249)
+scale = Vector2(1, 1.71429)
+texture = ExtResource("7_0eff6")
+script = ExtResource("10_ofhd2")
+
+[node name="bartop" type="Sprite2D" parent="upgrade2"]
+position = Vector2(866, 242)
+scale = Vector2(239, 2)
+texture = ExtResource("2_sqexo")
+
+[node name="barbottom" type="Sprite2D" parent="upgrade2"]
+position = Vector2(866, 256)
+scale = Vector2(239, 1.99999)
+texture = ExtResource("2_sqexo")
+
+[node name="barleft" type="Sprite2D" parent="upgrade2"]
+position = Vector2(629, 249)
+scale = Vector2(2.00002, 9)
+texture = ExtResource("2_sqexo")
+
+[node name="barright" type="Sprite2D" parent="upgrade2"]
+position = Vector2(1103, 249)
+scale = Vector2(2.00002, 9)
+texture = ExtResource("2_sqexo")
+
+[node name="title" type="RichTextLabel" parent="upgrade2"]
+offset_left = 627.0
+offset_top = 191.0
+offset_right = 956.0
+offset_bottom = 217.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("10_5rm6q")
+theme_override_font_sizes/normal_font_size = 18
+text = "upgrade auto click"
+vertical_alignment = 1
+
+[node name="desc" type="RichTextLabel" parent="upgrade2"]
+offset_left = 627.0
+offset_top = 214.0
+offset_right = 956.0
+offset_bottom = 240.0
+theme_override_colors/default_color = Color(0.244776, 0.244776, 0.244776, 1)
+theme_override_fonts/normal_font = ExtResource("4_w7k6m")
+theme_override_font_sizes/normal_font_size = 12
+text = "  +1 click per second"
+vertical_alignment = 1
+
+[node name="progress" type="RichTextLabel" parent="upgrade2"]
+offset_left = 627.0
+offset_top = 258.0
+offset_right = 956.0
+offset_bottom = 281.0
+theme_override_colors/default_color = Color(0.244776, 0.244776, 0.244776, 1)
+theme_override_fonts/normal_font = ExtResource("4_w7k6m")
+theme_override_font_sizes/normal_font_size = 10
+text = "   0 / 300 until next purchase is available"
+vertical_alignment = 1
+
+[node name="buttonshadow2" type="Sprite2D" parent="upgrade2"]
+position = Vector2(1044.5, 231)
+scale = Vector2(53.5, 2)
+texture = ExtResource("2_sqexo")
+
+[node name="buy2" type="Button" parent="upgrade2"]
+offset_left = 992.0
+offset_top = 190.0
+offset_right = 1097.0
+offset_bottom = 229.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("10_5rm6q")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = ExtResource("11_nwiku")
+theme_override_styles/disabled = ExtResource("11_nwiku")
+theme_override_styles/hover_pressed = ExtResource("11_nwiku")
+theme_override_styles/hover = ExtResource("11_nwiku")
+theme_override_styles/pressed = ExtResource("11_nwiku")
+theme_override_styles/normal = ExtResource("11_nwiku")
+text = "BUY"
+script = ExtResource("11_n2nxk")
+
+[node name="lvl2" type="RichTextLabel" parent="upgrade2"]
+offset_left = 1038.0
+offset_top = 267.0
+offset_right = 1117.0
+offset_bottom = 290.0
+theme_override_colors/default_color = Color(0.244776, 0.244776, 0.244776, 1)
+theme_override_fonts/normal_font = ExtResource("4_w7k6m")
+theme_override_font_sizes/normal_font_size = 10
+text = "lvl 0    "
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="upgrade3" type="Node2D" parent="."]
+position = Vector2(0, 296)
+
+[node name="top" type="Sprite2D" parent="upgrade3"]
+position = Vector2(866, 178)
+scale = Vector2(255, 2)
+texture = ExtResource("2_sqexo")
+
+[node name="bottom" type="Sprite2D" parent="upgrade3"]
+position = Vector2(866, 290)
+scale = Vector2(255, 2)
+texture = ExtResource("2_sqexo")
+
+[node name="right" type="Sprite2D" parent="upgrade3"]
+position = Vector2(1119, 234)
+scale = Vector2(2.00002, 58)
+texture = ExtResource("2_sqexo")
+
+[node name="left" type="Sprite2D" parent="upgrade3"]
+position = Vector2(613, 234)
+scale = Vector2(1.99999, 58)
+texture = ExtResource("2_sqexo")
+
+[node name="progressbar3" type="Sprite2D" parent="upgrade3"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(630, 247)
+scale = Vector2(1, 1.714)
+texture = ExtResource("7_0eff6")
+script = ExtResource("10_ofhd2")
+
+[node name="bartop" type="Sprite2D" parent="upgrade3"]
+position = Vector2(866, 240)
+scale = Vector2(239, 2)
+texture = ExtResource("2_sqexo")
+
+[node name="barbottom" type="Sprite2D" parent="upgrade3"]
+position = Vector2(866, 254)
+scale = Vector2(239, 1.99999)
+texture = ExtResource("2_sqexo")
+
+[node name="barleft" type="Sprite2D" parent="upgrade3"]
+position = Vector2(629, 247)
+scale = Vector2(2.00002, 9)
+texture = ExtResource("2_sqexo")
+
+[node name="barright" type="Sprite2D" parent="upgrade3"]
+position = Vector2(1103, 247)
+scale = Vector2(2.00002, 9)
+texture = ExtResource("2_sqexo")
+
+[node name="title" type="RichTextLabel" parent="upgrade3"]
+offset_left = 627.0
+offset_top = 189.0
+offset_right = 956.0
+offset_bottom = 215.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("10_5rm6q")
+theme_override_font_sizes/normal_font_size = 18
+text = "upgrade multiplier"
+vertical_alignment = 1
+
+[node name="desc" type="RichTextLabel" parent="upgrade3"]
+offset_left = 627.0
+offset_top = 212.0
+offset_right = 956.0
+offset_bottom = 238.0
+theme_override_colors/default_color = Color(0.244776, 0.244776, 0.244776, 1)
+theme_override_fonts/normal_font = ExtResource("4_w7k6m")
+theme_override_font_sizes/normal_font_size = 12
+text = "  +10% multiplier"
+vertical_alignment = 1
+
+[node name="progress" type="RichTextLabel" parent="upgrade3"]
+offset_left = 627.0
+offset_top = 256.0
+offset_right = 956.0
+offset_bottom = 279.0
+theme_override_colors/default_color = Color(0.244776, 0.244776, 0.244776, 1)
+theme_override_fonts/normal_font = ExtResource("4_w7k6m")
+theme_override_font_sizes/normal_font_size = 10
+text = "   0 / 100 until next purchase is available"
+vertical_alignment = 1
+
+[node name="buttonshadow3" type="Sprite2D" parent="upgrade3"]
+position = Vector2(1044.5, 229)
+scale = Vector2(53.5, 2)
+texture = ExtResource("2_sqexo")
+
+[node name="buy3" type="Button" parent="upgrade3"]
+offset_left = 992.0
+offset_top = 188.0
+offset_right = 1097.0
+offset_bottom = 227.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("10_5rm6q")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = ExtResource("11_nwiku")
+theme_override_styles/disabled = ExtResource("11_nwiku")
+theme_override_styles/hover_pressed = ExtResource("11_nwiku")
+theme_override_styles/hover = ExtResource("11_nwiku")
+theme_override_styles/pressed = ExtResource("11_nwiku")
+theme_override_styles/normal = ExtResource("11_nwiku")
+text = "BUY"
+script = ExtResource("11_n2nxk")
+
+[node name="lvl3" type="RichTextLabel" parent="upgrade3"]
+offset_left = 1038.0
+offset_top = 265.0
+offset_right = 1117.0
+offset_bottom = 288.0
+theme_override_colors/default_color = Color(0.244776, 0.244776, 0.244776, 1)
+theme_override_fonts/normal_font = ExtResource("4_w7k6m")
+theme_override_font_sizes/normal_font_size = 10
+text = "lvl 0    "
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [connection signal="pressed" from="upgrades" to="." method="_on_upgrades_pressed"]
 [connection signal="pressed" from="skins" to="." method="_on_skins_pressed"]
+[connection signal="mouse_entered" from="clicker/Area2D" to="clicker/Area2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="clicker/Area2D" to="clicker/Area2D" method="_on_mouse_exited"]
+[connection signal="button_down" from="skins2/buy1" to="skins2/buy1" method="_on_button_down"]
+[connection signal="button_up" from="skins2/buy1" to="skins2/buy1" method="_on_button_up"]
+[connection signal="mouse_entered" from="skins2/buy1" to="skins2/buy1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="skins2/buy1" to="skins2/buy1" method="_on_mouse_exited"]
+[connection signal="button_down" from="skins2/buy2" to="skins2/buy2" method="_on_button_down"]
+[connection signal="button_up" from="skins2/buy2" to="skins2/buy2" method="_on_button_up"]
+[connection signal="mouse_entered" from="skins2/buy2" to="skins2/buy2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="skins2/buy2" to="skins2/buy2" method="_on_mouse_exited"]
+[connection signal="button_down" from="skins2/mode" to="skins2/mode" method="_on_button_down"]
+[connection signal="button_up" from="skins2/mode" to="skins2/mode" method="_on_button_up"]
+[connection signal="mouse_entered" from="skins2/mode" to="skins2/mode" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="skins2/mode" to="skins2/mode" method="_on_mouse_exited"]
+[connection signal="button_down" from="upgrade1/buy" to="upgrade1/buy" method="_on_button_down"]
+[connection signal="button_up" from="upgrade1/buy" to="upgrade1/buy" method="_on_button_up"]
+[connection signal="mouse_entered" from="upgrade1/buy" to="upgrade1/buy" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="upgrade1/buy" to="upgrade1/buy" method="_on_mouse_exited"]
+[connection signal="button_down" from="upgrade2/buy2" to="upgrade2/buy2" method="_on_button_down"]
+[connection signal="button_up" from="upgrade2/buy2" to="upgrade2/buy2" method="_on_button_up"]
+[connection signal="mouse_entered" from="upgrade2/buy2" to="upgrade2/buy2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="upgrade2/buy2" to="upgrade2/buy2" method="_on_mouse_exited"]
+[connection signal="button_down" from="upgrade3/buy3" to="upgrade3/buy3" method="_on_button_down"]
+[connection signal="button_up" from="upgrade3/buy3" to="upgrade3/buy3" method="_on_button_up"]
+[connection signal="mouse_entered" from="upgrade3/buy3" to="upgrade3/buy3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="upgrade3/buy3" to="upgrade3/buy3" method="_on_mouse_exited"]
