@@ -15,3 +15,5 @@ var cappoints1:int = 0
 var cappoints2:int = 0
 var cappoints3:int = 0
 var skin:int = 1
+var unroundedallpoints:float = 0
+var allclicks:int = 0

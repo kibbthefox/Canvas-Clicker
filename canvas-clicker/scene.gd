@@ -39,6 +39,7 @@ func _on_upgrades_pressed() -> void:
 
 func _process(_delta: float) -> void:
 	if Gl.skin == 1:
+		load("res://Assets/clicker.tres").bg_color = Color("ff6464")
 		$bg/Canvas.visible = true
 		$bg/bg.visible = true
 		$clicker.frame = 0
@@ -60,7 +61,10 @@ func _process(_delta: float) -> void:
 		$"bg/white5-2".visible = true
 		$"bg/white6-2".visible = true
 		$"bg/white7-2".visible = true
+		$"bg/white8-2".visible = true
+		$"bg/white9-2".visible = true
 	if Gl.skin == 2:
+		load("res://Assets/clicker.tres").bg_color = Color("6dd3fc")
 		$bg/bg2.visible = true
 		$clicker.frame = 1
 		$upgrade1/progressbar1.modulate = Color("#ffd6ff")
@@ -68,6 +72,35 @@ func _process(_delta: float) -> void:
 		$upgrade3/progressbar3.modulate = Color("#ffd6ff")
 	else:
 		$bg/bg2.visible = false
+	if Gl.skin == 21:
+		load("res://Assets/clicker.tres").bg_color = Color("6dd3fc")
+		$bg/tranbg.visible = true
+		$clicker.frame = 1
+		$upgrade1/progressbar1.modulate = Color("#ffd6ff")
+		$upgrade2/progressbar2.modulate = Color("#ffd6ff")
+		$upgrade3/progressbar3.modulate = Color("#ffd6ff")
+	else:
+		$bg/tranbg.visible = false
+	if Gl.skin == 3:
+		load("res://Assets/clicker.tres").bg_color = Color("6dd3fc")
+		$bg/blahajbg.visible = true
+		$bg/blahajwhite.visible = true
+		$clicker.frame = 2
+		$upgrade1/progressbar1.modulate = Color("#000000")
+		$upgrade2/progressbar2.modulate = Color("#000000")
+		$upgrade3/progressbar3.modulate = Color("#000000")
+	else:
+		$bg/blahajbg.visible = false
+		$bg/blahajwhite.visible = false
+	if Gl.skin == 4:
+		load("res://Assets/clicker.tres").bg_color = Color("ff6464")
+		$clicker.frame = 3
+		$bg/catbg.visible = true
+		$upgrade1/progressbar1.modulate = Color("#000000")
+		$upgrade2/progressbar2.modulate = Color("#000000")
+		$upgrade3/progressbar3.modulate = Color("#000000")
+	else:
+		$bg/catbg.visible = false
 	Gl.points = int(Gl.unroundedpoints)
 	if Gl.points <= Gl.price1:
 		Gl.cappoints1 = Gl.points
@@ -85,6 +118,8 @@ func _process(_delta: float) -> void:
 	$cps.text = "  cps       "+str(Gl.cps)
 	$clicks.text = "  clicks   "+str(Gl.clicks)
 	$mult.text = "  mult   x"+str(Gl.multiplier)
+	$alltimepoints.text = "  all-time points   "+str(int(Gl.unroundedallpoints))
+	$alltimeclicks.text = "  all-time clicks     "+str(Gl.allclicks)
 	$upgrade1/progress.text = "   "+str(Gl.cappoints1)+" / "+str(Gl.price1)+" until next purchase is available"
 	$upgrade2/progress.text = "   "+str(Gl.cappoints2)+" / "+str(Gl.price2)+" until next purchase is available"
 	$upgrade3/progress.text = "   "+str(Gl.cappoints3)+" / "+str(Gl.price3)+" until next purchase is available"

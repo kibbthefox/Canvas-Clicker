@@ -15,7 +15,9 @@ func _on_mouse_exited() -> void:
 func _process(_delta: float) -> void:
 	if touching == true:
 		if Input.is_action_just_pressed("left"):
+			Gl.allclicks += 1
 			Gl.unroundedpoints += Gl.clicks * Gl.multiplier
+			Gl.unroundedallpoints += Gl.clicks * Gl.multiplier
 			get_parent().rotation -= PI / 300
 
 
@@ -23,4 +25,5 @@ func _physics_process(_delta: float) -> void:
 	time += 1
 	if time > 60:
 		Gl.unroundedpoints += Gl.cps * Gl.multiplier
+		Gl.unroundedallpoints += Gl.cps * Gl.multiplier
 		time = 1
